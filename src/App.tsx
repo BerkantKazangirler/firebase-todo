@@ -1,8 +1,6 @@
-import { Section } from "./components/section/section";
-import { Titles } from "./components/section/titles";
-import { UsersList } from "./components/section/userlist";
+import { Titles, Section, UsersList } from "@/components";
 
-const App = () => {
+export const App = () => {
   const sections = Array.from({ length: 6 }, (_, i) => `section${i + 1}`);
   const activeSections = sections;
 
@@ -18,5 +16,3 @@ const App = () => {
     </div>
   );
 };
-
-export default App;

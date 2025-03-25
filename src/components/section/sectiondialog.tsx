@@ -3,13 +3,9 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { SectionData } from "../type";
+import { SectionData } from "@/components/type";
 
-interface SectionDialogType {
-  data: SectionData;
-}
-
-export const SectionDialog = ({ data }: SectionDialogType) => {
+export const SectionDialog = (data: SectionData) => {
   return (
     <DialogHeader>
       <DialogTitle>{data.title}</DialogTitle>

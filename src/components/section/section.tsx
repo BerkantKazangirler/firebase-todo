@@ -1,25 +1,20 @@
 import { useState, useEffect } from "react";
-import { SectionData } from "../type";
-import { fetchSectionData, SectionDialog } from "@/components";
-
+import { SectionDialog } from "@/components";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { fetch } from "@/utils/fetch-data";
 
 interface SectionProps {
   sectionId: string;
 }
 
 export const Section = ({ sectionId }: SectionProps) => {
-  const [data, setData] = useState<SectionData[]>([]);
-  const [selected, setSelected] = useState<SectionData[]>([]);
+  const [data, setData] = useState([]);
+  const [selected, setSelected] = useState([]);
 
   useEffect(() => {
     const loadData = async () => {
-      try {
-        const sectionData = await fetchSectionData(sectionId);
-        setData(sectionData);
-      } catch (err) {
-        console.log(`Veri yüklenirken hata oluştu: ${err}`);
-      }
+      const sectionData = await fetch(sectionId);
+      setData(sectionData);
     };
 
     loadData();

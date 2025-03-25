@@ -1,18 +1,13 @@
 import { useState, useEffect } from "react";
-import { fetchTitleData } from "@/components";
-import { TitlesData } from "../type";
+import { fetch } from "@/utils/fetch-data";
 
 export const Titles = () => {
-  const [titles, setTitles] = useState<TitlesData[]>([]);
+  const [titles, setTitles] = useState([]);
 
   useEffect(() => {
     const loadUsers = async () => {
-      try {
-        const titlesData = await fetchTitleData();
-        setTitles(titlesData);
-      } catch (err) {
-        console.log(err);
-      }
+      const titlesData = await fetch("titles");
+      setTitles(titlesData);
     };
 
     loadUsers();

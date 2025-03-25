@@ -1,18 +1,13 @@
 import { useState, useEffect } from "react";
-import { fetchUsersData } from "@/components";
-import { UserData } from "../type";
+import { fetch } from "@/utils/fetch-data";
 
 export const UsersList = () => {
-  const [users, setUsers] = useState<UserData[]>([]);
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     const loadUsers = async () => {
-      try {
-        const userData = await fetchUsersData();
-        setUsers(userData);
-      } catch (err) {
-        console.log(`Kullanıcı verileri yüklenirken hata oluştu: ${err}`);
-      }
+      const userData = await fetch("users");
+      setUsers(userData);
     };
 
     loadUsers();

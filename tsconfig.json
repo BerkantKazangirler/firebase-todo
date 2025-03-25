@@ -6,6 +6,9 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "target": "esnext",
     "paths": {
       "@/*": ["./src/*"]
     }
