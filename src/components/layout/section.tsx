@@ -11,6 +11,7 @@ interface SectionProps {
 export const SectionLayout = ({ sectionId }: SectionProps) => {
   const [selected, setSelected] = useState<SectionData>();
   const [titles, setTitles] = useState<TitlesData[]>([]);
+  const [data, setData] = useState([]);
 
   const titleNames = titles.find((testdata) => {
     return sectionId === testdata.id;
@@ -25,15 +26,22 @@ export const SectionLayout = ({ sectionId }: SectionProps) => {
     loadUsers();
   }, []);
 
+  useEffect(() => {
+    const loadData = async () => {
+      const sectionData = await fetch(sectionId);
+      setData(sectionData);
+    };
+
+    loadData();
+  }, [sectionId]);
+
   return (
     <div className="border rounded-md p-4 my-4">
       <Dialog>
         <h2 className="text-xl font-bold mb-4">
           {titleNames?.name +
             " " +
-            (titleNames?.tasks?.length
-              ? "(" + titleNames?.tasks?.length + ")"
-              : "(0)")}
+            (data.length ? "(" + data.length + ")" : "(0)")}
         </h2>
         <DialogTrigger>
           <Section sectionId={sectionId} setSelected={setSelected} />
