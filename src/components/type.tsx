@@ -1,4 +1,5 @@
 export interface SectionData {
+  id: string;
   assigned_to: string[];
   description: string;
   due_date: string;
@@ -9,6 +10,7 @@ export interface SectionData {
 }
 
 export interface UserData {
+  id: string;
   email: string;
   name: string;
   surname: string;
@@ -16,6 +18,7 @@ export interface UserData {
 }
 
 export interface TitlesData {
-  name: string;
+  id: string;
+  name?: string;
   tasks?: string[];
 }

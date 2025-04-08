@@ -6,7 +6,7 @@ export const fetch = async (url: string) => {
     const collectionRef = collection(FirebaseConfig, url);
     const snapshot = await getDocs(collectionRef);
     return snapshot.docs.map(
-      (doc) => ({ name: doc.id, ...doc.data() })
+      (doc) => ({ id: doc.id, ...doc.data() })
     );
   } catch (error) {
     console.error("Error fetching data:", error);
