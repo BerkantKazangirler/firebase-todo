@@ -4,7 +4,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { SectionData } from "@/components/type";
-import { useDataContext } from "@/components";
+import { useDataContext } from "@/context";
 
 interface test {
   data: SectionData;

@@ -6,9 +6,10 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
-    "module": "esnext",
-    "moduleResolution": "node",
+    "module": "esnext",  // Burayı es2020, es2022, esnext vb. ile değiştirebilirsiniz
     "target": "esnext",
+    "moduleResolution": "node",
+    "composite": true,
     "paths": {
       "@/*": ["./src/*"]
     }
