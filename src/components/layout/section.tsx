@@ -1,38 +1,31 @@
 import { Section, SectionDialog } from "@/components";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useState } from "react";
-import { SectionData } from "@/components/type";
+import { SectionData, viewSectionEnum } from "@/components/type";
+import { useSectionContext } from "@/context";
 
-export const SectionLayout = () => {
+interface sectionProps {
+  status: string;
+}
+
+export const SectionLayout = ({ status }: sectionProps) => {
   const [selected, setSelected] = useState<SectionData>();
-
-  // const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
-  //   event.preventDefault();
-  //   const missionId = event.dataTransfer.getData("missionId");
-
-  //   if (missionId) {
-  //     updateMission(missionId);
-  //   }
-  // };
-
-  // const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
-  //   event.preventDefault();
-  // };
+  const { sectionData } = useSectionContext();
 
   return (
-    <div
-      className="border rounded-md p-4 my-4"
-      // onDragOver={handleDragOver}
-      // onDrop={handleDrop}
-    >
+    <div className="border rounded-md p-4 h-full">
       <Dialog>
-        <h2 className="text-xl font-bold mb-4">
-          {/* {titleNames?.name +
-            " " +
-            (data.length ? "(" + data.length + ")" : "(0)")} */}
-        </h2>
-        <DialogTrigger>
-          <Section setSelected={setSelected} />
+        <h2 className="text-xl font-bold mb-4">{viewSectionEnum(status)}</h2>
+        <DialogTrigger className="flex flex-col gap-3 w-full">
+          {sectionData
+            ?.filter(
+              (t) => viewSectionEnum(t.status) === viewSectionEnum(status)
+            )
+            ?.map((m: SectionData) => (
+              <div key={m.id} id={m.id}>
+                <Section setSelected={setSelected} data={m} />
+              </div>
+            ))}
         </DialogTrigger>
         <DialogContent>
           <SectionDialog data={selected} />
