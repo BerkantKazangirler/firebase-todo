@@ -6,14 +6,14 @@ import {
 import { SectionData } from "@/components/type";
 import { useDataContext } from "@/context";
 
-interface test {
+interface dialogProps {
   data: SectionData;
 }
 
-export const SectionDialog = ({ data }: test) => {
+export const SectionDialog = ({ data }: dialogProps) => {
   const { users } = useDataContext();
-  const test = users.find((testdata) => {
-    return String(data?.assigned_to) === testdata.id;
+  const filteredData = users.find((userData) => {
+    return String(data?.assigned_to) === userData.id;
   });
 
   return (
@@ -23,7 +23,7 @@ export const SectionDialog = ({ data }: test) => {
       <div className="flex flex-col gap-2">
         <div className="flex flex-row gap-1">
           <span>Personel :</span>
-          <span>{test.name + " " + test.surname}</span>
+          <span>{filteredData.name + " " + filteredData.surname}</span>
         </div>
       </div>
     </DialogHeader>

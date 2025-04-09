@@ -1,50 +1,38 @@
 import { Section, SectionDialog } from "@/components";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { useEffect, useState } from "react";
-import { SectionData, TitlesData } from "@/components/type";
-import { fetch } from "@/utils/fetch-data";
+import { useState } from "react";
+import { SectionData } from "@/components/type";
 
-interface SectionProps {
-  sectionId: string;
-}
-
-export const SectionLayout = ({ sectionId }: SectionProps) => {
+export const SectionLayout = () => {
   const [selected, setSelected] = useState<SectionData>();
-  const [titles, setTitles] = useState<TitlesData[]>([]);
-  const [data, setData] = useState([]);
 
-  const titleNames = titles.find((testdata) => {
-    return sectionId === testdata.id;
-  });
+  // const handleDrop = (event: React.DragEvent<HTMLDivElement>) => {
+  //   event.preventDefault();
+  //   const missionId = event.dataTransfer.getData("missionId");
 
-  useEffect(() => {
-    const loadUsers = async () => {
-      const titlesData = await fetch("titles");
-      setTitles(titlesData);
-    };
+  //   if (missionId) {
+  //     updateMission(missionId);
+  //   }
+  // };
 
-    loadUsers();
-  }, []);
-
-  useEffect(() => {
-    const loadData = async () => {
-      const sectionData = await fetch(sectionId);
-      setData(sectionData);
-    };
-
-    loadData();
-  }, [sectionId]);
+  // const handleDragOver = (event: React.DragEvent<HTMLDivElement>) => {
+  //   event.preventDefault();
+  // };
 
   return (
-    <div className="border rounded-md p-4 my-4">
+    <div
+      className="border rounded-md p-4 my-4"
+      // onDragOver={handleDragOver}
+      // onDrop={handleDrop}
+    >
       <Dialog>
         <h2 className="text-xl font-bold mb-4">
-          {titleNames?.name +
+          {/* {titleNames?.name +
             " " +
-            (data.length ? "(" + data.length + ")" : "(0)")}
+            (data.length ? "(" + data.length + ")" : "(0)")} */}
         </h2>
         <DialogTrigger>
-          <Section sectionId={sectionId} setSelected={setSelected} />
+          <Section setSelected={setSelected} />
         </DialogTrigger>
         <DialogContent>
           <SectionDialog data={selected} />

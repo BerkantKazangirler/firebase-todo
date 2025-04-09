@@ -7,6 +7,7 @@ export interface SectionData {
   project_id: string;
   tags: string[];
   title: string;
+  status: string;
 }
 
 export interface UserData {
@@ -15,10 +16,4 @@ export interface UserData {
   name: string;
   surname: string;
   role: string;
-}
-
-export interface TitlesData {
-  id: string;
-  name?: string;
-  tasks?: string[];
 }

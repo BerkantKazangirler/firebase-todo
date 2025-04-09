@@ -2,6 +2,7 @@ import { useDataContext } from "@/context";
 
 export const Users = () => {
   const { users } = useDataContext();
+
   return (
     <div className="flex flex-col gap-2">
       {users.map((user) => (
