@@ -5,8 +5,17 @@ interface SectionProps {
 }
 
 export const Section = ({ setSelected, data }: SectionProps) => {
+  const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
+    event.dataTransfer.setData("missionId", data.id);
+  };
+
   return (
-    <div className="flex flex-col gap-4">
+    <div
+      className="flex flex-col gap-4"
+      draggable
+      onDragStart={handleDragStart}
+      id={data.id}
+    >
       <div
         onClick={() => setSelected(data)}
         key={data.id}

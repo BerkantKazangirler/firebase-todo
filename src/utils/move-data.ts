@@ -1,20 +1,14 @@
 import { db } from "@/config/firebase";
-import { deleteDoc, doc, getDoc, setDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 
-export async function moveDocument(oldurl: string,newurl: string, docId: string) {
+export async function moveDocument(docId: string, newStatus: string) {
   try {
-    const oldDocRef = doc(db, oldurl, docId);
-    const oldDocSnap = await getDoc(oldDocRef);
-
-    if (oldDocSnap.exists()) {
-      const newDocRef = doc(db, newurl, docId);
-      await setDoc(newDocRef, oldDocSnap.data());
-      await deleteDoc(oldDocRef);
-      console.log("Veri başarıyla taşındı!");
-    } else {
-      console.log("Belge bulunamadı!");
-    }
+    const docRef = doc(db, "todos", docId);
+    await updateDoc(docRef, {
+      status: newStatus,
+    });
   } catch (error) {
-    console.error("Veri taşınırken bir hata oluştu: ", error);
+    console.error("hata:", error);
   }
 }
+
