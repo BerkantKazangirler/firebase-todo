@@ -20,9 +20,8 @@ const DataContext = createContext<DataContextType>({
 export const useSectionContext = () => useContext(DataContext);
 
 export const DataProvider = ({ children }: { children: React.ReactNode }) => {
-  const [sectionData, setSectionData] = useState<SectionData[]>([]);
+  const [sectionData, setSectionData] = useState([]);
   const [loading, setLoading] = useState(true);
-  // let test;
 
   useEffect(() => {
     const loadData = async () => {

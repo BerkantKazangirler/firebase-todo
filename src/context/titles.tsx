@@ -15,7 +15,7 @@ const TitleContext = createContext<TitleContextType>({
 export const useTitleContext = () => useContext(TitleContext);
 
 export const TitleProvider = ({ children }: { children: React.ReactNode }) => {
-  const [titleData, setTitleData] = useState<TitleDataI[]>([]);
+  const [titleData, setTitleData] = useState([]);
 
   useEffect(() => {
     const loadUsers = async () => {
