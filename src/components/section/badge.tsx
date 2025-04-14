@@ -103,7 +103,9 @@ export const Badge = ({ tag }: TagProp) => {
 
   return (
     <>
-      <span className={classNames("w-full px-2 py-1 rounded-lg", style.bg)}>
+      <span
+        className={classNames("w-full px-2 py-1 text-xs rounded-lg", style.bg)}
+      >
         {tag}
       </span>
     </>

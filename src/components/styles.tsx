@@ -3,37 +3,31 @@ export const sectionStyles = {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
-    border: "border-blue-400",
   },
   Postponed: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
-    border: "border-blue-400",
   },
   Testing: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
-    border: "border-blue-400",
   },
   inProgress: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
-    border: "border-blue-400",
   },
   Completed: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
-    border: "border-blue-400",
   },
   Cancelled: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
-    border: "border-blue-400",
   },
 } as any;
 

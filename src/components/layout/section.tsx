@@ -26,7 +26,7 @@ export const SectionLayout = ({ status }: sectionProps) => {
     return () => unsub();
   }, []);
 
-  const handleDrop = (event: any) => {
+  const handleDrop = (event) => {
     event.preventDefault();
     const missionId = event.dataTransfer.getData("missionId");
     const misssionStatusId = event.dataTransfer.getData("missionStatus");
@@ -50,12 +50,17 @@ export const SectionLayout = ({ status }: sectionProps) => {
     <div
       onDrop={handleDrop}
       data-status-id={status}
-      className="border rounded-md p-4 h-full"
+      className="bg-[#ebebeb] w-full min-w-[300px] rounded-md p-4"
       onDragOver={handleDragOver}
     >
       <Dialog>
-        <h2 className="text-xl font-bold mb-4">{viewSectionEnum(status)}</h2>
-        <DialogTrigger className="flex flex-col gap-3 w-full">
+        <h2 className="font-medium mb-4 gap-1 text-black text-opacity-40 flex flex-row text-sm uppercase">
+          {viewSectionEnum(status)}
+          <p className="font-normal">
+            {data.filter((data) => data.status == status).length}
+          </p>
+        </h2>
+        <DialogTrigger className="flex flex-col outline-none gap-3 w-full">
           {data
             ?.filter(
               (t) => viewSectionEnum(t.status) === viewSectionEnum(status)
