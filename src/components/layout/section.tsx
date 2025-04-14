@@ -2,9 +2,10 @@ import { Section, SectionDialog } from "@/components";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useEffect, useState } from "react";
 import { SectionData, viewSectionEnum } from "@/components/type";
-import { moveDocument, refreshData } from "@/utils/move-data";
+import { moveDocument } from "@/utils/move-data";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "@/config/firebase";
+import { refreshData } from "@/utils/refresh-data";
 
 interface sectionProps {
   status: string;

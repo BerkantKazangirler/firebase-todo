@@ -9,7 +9,4 @@ export { Users } from "./section/users"
 export { Badge } from "./section/badge"
 
 export { Layout } from "./layout/main"
-export { UserLayout } from "./layout/users"
 export { SectionLayout } from "./layout/section"
-
-export { db as FirebaseConfig } from "../config/firebase"

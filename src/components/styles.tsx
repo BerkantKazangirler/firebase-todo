@@ -1,35 +1,35 @@
 export const sectionStyles = {
-  ToDo: {
+  TODO: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
   },
-  Postponed: {
+  POSTPONED: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
   },
-  Testing: {
+  TESTING: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
   },
-  inProgress: {
+  IN_PROGRESS: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
   },
-  Completed: {
+  COMPLETED: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
   },
-  Cancelled: {
+  CANCELLED: {
     title: "text-red-600",
     desc: "text-gray-400",
     priority: "text-yellow-400",
   },
-} as any;
+};
 
 export const priorityStyles = {
   High: "text-red-400 font-medium",

@@ -1,5 +1,5 @@
 import { SectionData, viewPriorityEnum } from "@/components/type";
-import { cn } from "@/utils/utils";
+import cn from "classnames";
 import { priorityStyles, sectionStyles } from "@/components/styles";
 import { Badge } from "@/components";
 import { useDataContext } from "@/context";

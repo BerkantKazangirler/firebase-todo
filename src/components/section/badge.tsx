@@ -97,7 +97,7 @@ export const Badge = ({ tag }: TagProp) => {
     SEO: {
       bg: "bg-todo-blue/50",
     },
-  } as any;
+  };
 
   const style = styles[viewMapper(tag)];
 

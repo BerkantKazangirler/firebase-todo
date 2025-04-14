@@ -1,10 +1,10 @@
 export enum SectionEnum {
-  todo = "ToDo",
-  inprogress = "inProgress",
-  postponed = "Postponed",
-  testing = "Testing",
-  completed = "Completed",
-  cancelled = "Cancelled",
+  todo = "TODO",
+  inprogress = "IN_PROGRESS",
+  postponed = "POSTPONED",
+  testing = "TESTING",
+  completed = "COMPLETED",
+  cancelled = "CANCELLED",
 }
 
 export function viewSectionEnum(section: string) {
