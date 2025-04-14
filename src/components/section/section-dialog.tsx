@@ -21,9 +21,11 @@ export const SectionDialog = ({ data }: dialogProps) => {
       <DialogTitle>{data.title}</DialogTitle>
       <DialogDescription>{data.description}</DialogDescription>
       <div className="flex flex-col gap-2">
-        <div className="flex flex-row gap-1">
+        <div className="flex flex-row text-sm gap-1">
           <span>Personel :</span>
-          <span>{filteredData.name + " " + filteredData.surname}</span>
+          <span className="font-medium">
+            {filteredData.name + " " + filteredData.surname}
+          </span>
         </div>
       </div>
     </DialogHeader>
