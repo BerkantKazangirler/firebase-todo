@@ -1,5 +1,4 @@
 import { TagEnum } from "@/types";
-import { viewMapper } from "@/types/section";
 import classNames from "classnames";
 
 interface TagProp {
@@ -8,91 +7,94 @@ interface TagProp {
 
 export const Badge = ({ tag }: TagProp) => {
   const styles = {
-    Offline: {
+    OFFLINE: {
       bg: "bg-green-tag",
     },
-    Backend: {
+    BACKEND: {
       bg: "bg-green-tag",
     },
     UI: {
       bg: "bg-red-tag",
     },
-    Training: {
+    DESIGN: {
+      bg: "bg-red-tag",
+    },
+    TRAINING: {
       bg: "bg-todo-blue/50",
     },
-    Documentation: {
+    DOCUMENTATION: {
       bg: "bg-todo-blue/50",
     },
-    Release: {
+    RELEASE: {
       bg: "bg-low-tag",
     },
-    AppStore: {
+    APP_STORE: {
       bg: "bg-low-tag",
     },
-    Infrastructure: {
+    INFRASTRUCTURE: {
       bg: "bg-red-tag",
     },
-    Integration: {
+    INTEGRATION: {
       bg: "bg-red-tag",
     },
-    SocialMedia: {
+    SOCIAL_MEDIA: {
       bg: "bg-green-tag",
     },
-    Backup: {
+    BACKUP: {
       bg: "bg-green-tag",
     },
-    Database: {
+    DATABASE: {
       bg: "bg-red-tag",
     },
-    Form: {
+    FORM: {
       bg: "bg-low-tag",
     },
-    Reporting: {
+    REPORTING: {
       bg: "bg-low-tag",
     },
     DataAnalysis: {
       bg: "bg-red-tag",
     },
-    Design: {
+    DATA_ANALYSIS: {
       bg: "bg-low-tag",
     },
-    Security: {
+    SECURITY: {
       bg: "bg-green-tag",
     },
     QA: {
       bg: "bg-green-tag",
     },
-    Localization: {
+    LOCALIZATION: {
       bg: "bg-red-tag",
     },
-    Debugging: {
+    DEBUGGING: {
       bg: "bg-red-tag",
     },
-    Migration: {
+    MIGRATION: {
       bg: "bg-low-tag",
     },
-    Feedback: {
+    FEEDBACK: {
       bg: "bg-green-tag",
     },
-    Content: {
+    CONTENT: {
       bg: "bg-todo-blue/50",
     },
-    Web: {
+    WEB: {
       bg: "bg-red-tag",
     },
-    Optimization: {
+    OPTIMIZATION: {
       bg: "bg-low-tag",
     },
-    Notification: {
+    NOTIFICATION: {
       bg: "bg-red-tag",
     },
-    BugFix: {
+    BUG_FIX: {
       bg: "bg-low-tag",
     },
-    Testing: {
+    TESTING: {
       bg: "bg-todo-blue/50",
     },
-    Communication: {
+    COMMUNICATION: {
       bg: "bg-todo-blue/50",
     },
     SEO: {
@@ -100,12 +102,13 @@ export const Badge = ({ tag }: TagProp) => {
     },
   };
 
-  const style = styles[viewMapper(tag)];
-
   return (
     <>
       <span
-        className={classNames("w-full px-2 py-1 text-xs rounded-lg", style.bg)}
+        className={classNames(
+          "w-full px-2 py-1 text-xs rounded-lg",
+          styles[tag]?.bg
+        )}
       >
         {tag}
       </span>

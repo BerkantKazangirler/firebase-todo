@@ -6,7 +6,7 @@ import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "@/configs/firebase";
 import { refreshData } from "@/api/refresh-data";
 import { SectionDataI } from "@/types";
-import { viewSectionEnum } from "@/types/section";
+import { SectionEnum } from "@/types/section";
 
 interface sectionProps {
   status: string;
@@ -57,16 +57,14 @@ export const SectionLayout = ({ status }: sectionProps) => {
     >
       <Dialog>
         <h2 className="font-medium mb-4 gap-1 text-black text-opacity-40 flex flex-row text-sm uppercase">
-          {viewSectionEnum(status)}
+          {SectionEnum[status]}
           <p className="font-normal">
             {data.filter((data) => data.status == status).length}
           </p>
         </h2>
         <DialogTrigger className="flex flex-col outline-none gap-3 w-full">
           {data
-            ?.filter(
-              (t) => viewSectionEnum(t.status) === viewSectionEnum(status)
-            )
+            ?.filter((t) => SectionEnum[t.status] === SectionEnum[status])
             ?.map((m: SectionDataI) => (
               <div
                 key={m.id}

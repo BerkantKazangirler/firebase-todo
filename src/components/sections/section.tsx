@@ -1,6 +1,6 @@
 import { Badge } from "@/components";
 import { SectionDataI } from "@/types";
-import { viewPriorityEnum } from "@/types/section";
+import { PriorityEnum } from "@/types/section";
 interface SectionProps {
   setSelected: React.Dispatch<React.SetStateAction<SectionDataI>>;
   data: SectionDataI;
@@ -31,7 +31,7 @@ export const Section = ({ setSelected, data }: SectionProps) => {
           </div>
           <div className="flex flex-row justify-between">
             <p className="w-fit text-sm">
-              Öncelik : <span>{viewPriorityEnum(data.priority)}</span>
+              Öncelik : <span>{PriorityEnum[data.priority]}</span>
             </p>
             <p className="text-sm text-black text-opacity-30 font-medium">
               {data.user.name + " " + data.user.surname}
