@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { fetch } from "@/utils/fetch-data";
-import { UserI } from "@/type";
+import { UserI } from "@/types";
 
 type DataContextType = {
   users: UserI[];

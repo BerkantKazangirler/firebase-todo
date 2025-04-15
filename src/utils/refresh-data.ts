@@ -1,4 +1,4 @@
-import { db } from "@/config/firebase";
+import { db } from "@/configs/firebase";
 import { collection, getDocs } from "firebase/firestore";
 
 export async function refreshData() {

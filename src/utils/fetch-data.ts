@@ -1,4 +1,4 @@
-import { firebaseConfig } from "@/config";
+import { firebaseConfig } from "@/configs";
 import { collection, getDocs } from "firebase/firestore";
 
 export const fetch = async (url: string) => {

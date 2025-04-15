@@ -1,95 +1,95 @@
 export enum TagEnum {
-  Offline = "Offline",
-  Backend = "Backend",
+  OFFLINE = "Offline",
+  BACKEND = "Backend",
   UI = "UI",
-  Training = "Training",
-  Documentation = "Documentation",
-  Release = "Release",
-  AppStore = "App Store",
-  Infrastructure = "Infrastructure",
-  Integration = "Integration",
-  SocialMedia = "Social Media",
-  Backup = "Backup",
-  Database = "Database",
-  Form = "Form",
-  Reporting = "Reporting",
-  DataAnalysis = "Data Analysis",
-  Design = "Design",
-  Security = "Security",
+  TRAINING = "Training",
+  DOCUMENTATION = "Documentation",
+  RELEASE = "Release",
+  APP_STORE = "App Store",
+  INFRASTRUCTURE = "Infrastructure",
+  INTEGRATION = "Integration",
+  SOCIAL_MEDIA = "Social Media",
+  BACKUP = "Backup",
+  DATABASE = "Database",
+  FORM = "Form",
+  REPORTING = "Reporting",
+  DATA_ANALYSIS = "Data Analysis",
+  DESIGN = "Design",
+  SECURITY = "Security",
   QA = "QA",
-  Localization = "Localization",
-  Debugging = "Debugging",
-  Migration = "Migration",
-  Feedback = "Feedback",
-  Content = "Content",
-  Web = "Web",
-  Optimization = "Optimization",
-  Notification = "Notification",
-  BugFix = "Bug Fix",
-  Testing = "Testing",
-  Communication = "Communication",
+  LOCALIZATION = "Localization",
+  DEBUGGING = "Debugging",
+  MIGRATION = "Migration",
+  FEEDBACK = "Feedback",
+  CONTENT = "Content",
+  WEB = "Web",
+  OPTIMIZATION = "Optimization",
+  NOTIFICATION = "Notification",
+  BUG_FIX = "Bug Fix",
+  TESTING = "Testing",
+  COMMUNICATION = "Communication",
   SEO = "SEO",
 }
 
 export function viewMapper(tag: TagEnum): string {
   switch (tag) {
-    case TagEnum.Offline:
+    case TagEnum.OFFLINE:
       return "Offline";
-    case TagEnum.Backend:
+    case TagEnum.BACKEND:
       return "Backend";
     case TagEnum.UI:
       return "UI";
-    case TagEnum.Training:
+    case TagEnum.TRAINING:
       return "Training";
-    case TagEnum.Documentation:
+    case TagEnum.DOCUMENTATION:
       return "Documentation";
-    case TagEnum.Release:
+    case TagEnum.RELEASE:
       return "Release";
-    case TagEnum.AppStore:
+    case TagEnum.APP_STORE:
       return "AppStore";
-    case TagEnum.Infrastructure:
+    case TagEnum.INFRASTRUCTURE:
       return "Infrastructure";
-    case TagEnum.Integration:
+    case TagEnum.INTEGRATION:
       return "Integration";
-    case TagEnum.SocialMedia:
+    case TagEnum.SOCIAL_MEDIA:
       return "SocialMedia";
-    case TagEnum.Backup:
+    case TagEnum.BACKUP:
       return "Backup";
-    case TagEnum.Database:
+    case TagEnum.DATABASE:
       return "Database";
-    case TagEnum.Form:
+    case TagEnum.FORM:
       return "Form";
-    case TagEnum.Reporting:
+    case TagEnum.REPORTING:
       return "Reporting";
-    case TagEnum.DataAnalysis:
+    case TagEnum.DATA_ANALYSIS:
       return "DataAnalysis";
-    case TagEnum.Design:
+    case TagEnum.DESIGN:
       return "Design";
-    case TagEnum.Security:
+    case TagEnum.SECURITY:
       return "Security";
     case TagEnum.QA:
       return "QA";
-    case TagEnum.Localization:
+    case TagEnum.LOCALIZATION:
       return "Localization";
-    case TagEnum.Debugging:
+    case TagEnum.DEBUGGING:
       return "Debugging";
-    case TagEnum.Migration:
+    case TagEnum.MIGRATION:
       return "Migration";
-    case TagEnum.Feedback:
+    case TagEnum.FEEDBACK:
       return "Feedback";
-    case TagEnum.Content:
+    case TagEnum.CONTENT:
       return "Content";
-    case TagEnum.Web:
+    case TagEnum.WEB:
       return "Web";
-    case TagEnum.Optimization:
+    case TagEnum.OPTIMIZATION:
       return "Optimization";
-    case TagEnum.Notification:
+    case TagEnum.NOTIFICATION:
       return "Notification";
-    case TagEnum.BugFix:
+    case TagEnum.BUG_FIX:
       return "BugFix";
-    case TagEnum.Testing:
+    case TagEnum.TESTING:
       return "Testing";
-    case TagEnum.Communication:
+    case TagEnum.COMMUNICATION:
       return "Communication";
     case TagEnum.SEO:
       return "SEO";

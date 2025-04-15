@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { fetch } from "@/utils/fetch-data";
-import { SectionDataI } from "@/type";
+import { SectionDataI } from "@/types";
 
 type DataContextType = {
   sectionData: SectionDataI[];

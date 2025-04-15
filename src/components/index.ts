@@ -3,10 +3,10 @@ export { Input } from "./ui/input";
 
 export { sectionStyles } from "./styles";
 
-export { SectionDialog } from "./section/section-dialog"
-export { Section } from "./section/section"
-export { Users } from "./section/users"
-export { Badge } from "./section/badge"
+export { SectionDialog } from "./sections/section-dialog"
+export { Section } from "./sections/section"
+export { Users } from "./sections/users"
+export { Badge } from "./sections/badge"
 
-export { Layout } from "./layout/main"
-export { SectionLayout } from "./layout/section"
+export { Layout } from "./layouts/main"
+export { SectionLayout } from "./layouts/section"

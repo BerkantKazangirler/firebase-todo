@@ -3,8 +3,8 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useDataContext } from "@/context";
-import { SectionDataI } from "@/type";
+import { useDataContext } from "@/contexts";
+import { SectionDataI } from "@/types";
 
 interface dialogProps {
   data: SectionDataI;

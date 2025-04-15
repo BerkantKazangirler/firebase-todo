@@ -1,4 +1,4 @@
-import { useDataContext } from "@/context";
+import { useDataContext } from "@/contexts";
 import { Button } from "@/components";
 
 export const Users = () => {

@@ -1,4 +1,4 @@
-import { db } from "@/config/firebase";
+import { db } from "@/configs/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 
 export async function moveDocument(docId: string, newStatus: string) {

@@ -1,9 +1,9 @@
 import cn from "classnames";
 import { priorityStyles, sectionStyles } from "@/components/styles";
 import { Badge } from "@/components";
-import { useDataContext } from "@/context";
-import { SectionDataI } from "@/type";
-import { viewPriorityEnum } from "@/type/section";
+import { useDataContext } from "@/contexts";
+import { SectionDataI } from "@/types";
+import { viewPriorityEnum } from "@/types/section";
 interface SectionProps {
   setSelected: React.Dispatch<React.SetStateAction<SectionDataI>>;
   data: SectionDataI;

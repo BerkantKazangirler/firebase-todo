@@ -5,8 +5,3 @@ export interface UserData {
   surname: string;
   role: string;
 }
-
-// export interface TitleDataI {
-//   id: string;
-//   name: string;
-// }
