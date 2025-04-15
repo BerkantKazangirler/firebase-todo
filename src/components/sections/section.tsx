@@ -1,5 +1,4 @@
 import { Badge } from "@/components";
-import { useDataContext } from "@/contexts";
 import { SectionDataI } from "@/types";
 import { viewPriorityEnum } from "@/types/section";
 interface SectionProps {
@@ -8,15 +7,9 @@ interface SectionProps {
 }
 
 export const Section = ({ setSelected, data }: SectionProps) => {
-  const { users } = useDataContext();
-
   const handleDragStart = (event: React.DragEvent<HTMLDivElement>) => {
     event.dataTransfer.setData("missionId", data.id);
   };
-
-  const filteredUser = users.find((userData) => {
-    return String(data?.assigned_to) === userData.id;
-  });
 
   return (
     <div
@@ -41,7 +34,7 @@ export const Section = ({ setSelected, data }: SectionProps) => {
               Öncelik : <span>{viewPriorityEnum(data.priority)}</span>
             </p>
             <p className="text-sm text-black text-opacity-30 font-medium">
-              {filteredUser.name + " " + filteredUser.surname}
+              {data.user.name + " " + data.user.surname}
             </p>
           </div>
         </div>

@@ -145,10 +145,15 @@ export function viewPriorityEnum(priority: string) {
 
 export interface SectionData {
   id: string;
-  assigned_to: string[];
   description: string;
   priority: string;
   tags: TagEnum[];
   title: string;
   status: SectionEnum;
+  user: {
+    name: string;
+    surname: string;
+    email: string;
+    role: string;
+  }
 }

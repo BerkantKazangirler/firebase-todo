@@ -3,7 +3,6 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useDataContext } from "@/contexts";
 import { SectionDataI } from "@/types";
 
 interface dialogProps {
@@ -11,11 +10,6 @@ interface dialogProps {
 }
 
 export const SectionDialog = ({ data }: dialogProps) => {
-  const { users } = useDataContext();
-  const filteredData = users.find((userData) => {
-    return String(data?.assigned_to) === userData.id;
-  });
-
   return (
     <DialogHeader>
       <DialogTitle>{data.title}</DialogTitle>
@@ -24,7 +18,7 @@ export const SectionDialog = ({ data }: dialogProps) => {
         <div className="flex flex-row text-sm gap-1">
           <span>Personel :</span>
           <span className="font-medium">
-            {filteredData.name + " " + filteredData.surname}
+            {data.user.name + " " + data.user.surname}
           </span>
         </div>
       </div>
