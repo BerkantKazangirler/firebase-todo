@@ -1,10 +1,10 @@
-import { SectionData } from "@/components/type";
 import { createContext, useContext, useEffect, useState } from "react";
 import { fetch } from "@/utils/fetch-data";
+import { SectionDataI } from "@/type";
 
 type DataContextType = {
-  sectionData: SectionData[];
-  setSectionData: React.Dispatch<React.SetStateAction<SectionData[]>>;
+  sectionData: SectionDataI[];
+  setSectionData: React.Dispatch<React.SetStateAction<SectionDataI[]>>;
   loading: boolean;
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };

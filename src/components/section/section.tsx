@@ -1,11 +1,12 @@
-import { SectionData, viewPriorityEnum } from "@/components/type";
 import cn from "classnames";
 import { priorityStyles, sectionStyles } from "@/components/styles";
 import { Badge } from "@/components";
 import { useDataContext } from "@/context";
+import { SectionDataI } from "@/type";
+import { viewPriorityEnum } from "@/type/section";
 interface SectionProps {
-  setSelected: React.Dispatch<React.SetStateAction<SectionData>>;
-  data: SectionData;
+  setSelected: React.Dispatch<React.SetStateAction<SectionDataI>>;
+  data: SectionDataI;
 }
 
 export const Section = ({ setSelected, data }: SectionProps) => {

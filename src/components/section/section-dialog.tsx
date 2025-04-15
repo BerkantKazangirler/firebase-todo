@@ -3,11 +3,11 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { SectionData } from "@/components/type";
 import { useDataContext } from "@/context";
+import { SectionDataI } from "@/type";
 
 interface dialogProps {
-  data: SectionData;
+  data: SectionDataI;
 }
 
 export const SectionDialog = ({ data }: dialogProps) => {

@@ -1,18 +1,19 @@
 import { Section, SectionDialog } from "@/components";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useEffect, useState } from "react";
-import { SectionData, viewSectionEnum } from "@/components/type";
 import { moveDocument } from "@/utils/move-data";
 import { collection, onSnapshot } from "firebase/firestore";
 import { db } from "@/config/firebase";
 import { refreshData } from "@/utils/refresh-data";
+import { SectionDataI } from "@/type";
+import { viewSectionEnum } from "@/type/section";
 
 interface sectionProps {
   status: string;
 }
 
 export const SectionLayout = ({ status }: sectionProps) => {
-  const [selected, setSelected] = useState<SectionData>();
+  const [selected, setSelected] = useState<SectionDataI>();
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -66,7 +67,7 @@ export const SectionLayout = ({ status }: sectionProps) => {
             ?.filter(
               (t) => viewSectionEnum(t.status) === viewSectionEnum(status)
             )
-            ?.map((m: SectionData) => (
+            ?.map((m: SectionDataI) => (
               <div
                 key={m.id}
                 id={m.id}

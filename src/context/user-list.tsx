@@ -1,10 +1,10 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { fetch } from "@/utils/fetch-data";
-import { UserData } from "@/components/type";
+import { UserI } from "@/type";
 
 type DataContextType = {
-  users: UserData[];
-  setUsers: React.Dispatch<React.SetStateAction<UserData[]>>;
+  users: UserI[];
+  setUsers: React.Dispatch<React.SetStateAction<UserI[]>>;
 };
 
 const DataContext = createContext<DataContextType>({

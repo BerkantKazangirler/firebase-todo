@@ -1,5 +1,6 @@
+import { TagEnum } from "@/type";
+import { viewMapper } from "@/type/section";
 import classNames from "classnames";
-import { TagEnum, viewMapper } from "@/components/type";
 
 interface TagProp {
   tag: TagEnum;

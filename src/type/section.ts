@@ -1,48 +1,3 @@
-export enum SectionEnum {
-  todo = "TODO",
-  inprogress = "IN_PROGRESS",
-  postponed = "POSTPONED",
-  testing = "TESTING",
-  completed = "COMPLETED",
-  cancelled = "CANCELLED",
-}
-
-export function viewSectionEnum(section: string) {
-  switch (section) {
-    case SectionEnum.completed:
-      return "Tamamlandı";
-    case SectionEnum.inprogress:
-      return "Yapım Aşamasında";
-    case SectionEnum.testing:
-      return "Test Aşamasında";
-    case SectionEnum.cancelled:
-      return "İptal Edildi";
-    case SectionEnum.postponed:
-      return "Gönderildi";
-    case SectionEnum.todo:
-      return "Yapılacak";
-    default:
-      return "Unknown";
-  }
-}
-
-export enum PriorityEnum {
-  high = "High",
-  low = "Low",
-  medium = "Medium",
-}
-
-export function viewPriorityEnum(priority: string) {
-  switch (priority) {
-    case PriorityEnum.high:
-      return "Yüksek";
-    case PriorityEnum.medium:
-      return "Orta";
-    case PriorityEnum.low:
-      return "Düşük";
-  }
-}
-
 export enum TagEnum {
   Offline = "Offline",
   Backend = "Backend",
@@ -143,6 +98,51 @@ export function viewMapper(tag: TagEnum): string {
   }
 }
 
+export enum SectionEnum {
+  todo = "TODO",
+  inprogress = "IN_PROGRESS",
+  postponed = "POSTPONED",
+  testing = "TESTING",
+  completed = "COMPLETED",
+  cancelled = "CANCELLED",
+}
+
+export function viewSectionEnum(section: string) {
+  switch (section) {
+    case SectionEnum.completed:
+      return "Tamamlandı";
+    case SectionEnum.inprogress:
+      return "Yapım Aşamasında";
+    case SectionEnum.testing:
+      return "Test Aşamasında";
+    case SectionEnum.cancelled:
+      return "İptal Edildi";
+    case SectionEnum.postponed:
+      return "Gönderildi";
+    case SectionEnum.todo:
+      return "Yapılacak";
+    default:
+      return "Unknown";
+  }
+}
+
+export enum PriorityEnum {
+  high = "High",
+  low = "Low",
+  medium = "Medium",
+}
+
+export function viewPriorityEnum(priority: string) {
+  switch (priority) {
+    case PriorityEnum.high:
+      return "Yüksek";
+    case PriorityEnum.medium:
+      return "Orta";
+    case PriorityEnum.low:
+      return "Düşük";
+  }
+}
+
 export interface SectionData {
   id: string;
   assigned_to: string[];
@@ -153,17 +153,4 @@ export interface SectionData {
   tags: TagEnum[];
   title: string;
   status: SectionEnum;
-}
-
-export interface UserData {
-  id: string;
-  email: string;
-  name: string;
-  surname: string;
-  role: string;
-}
-
-export interface TitleDataI {
-  id: string;
-  name: string;
 }
