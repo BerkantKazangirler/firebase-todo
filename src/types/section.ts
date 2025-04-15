@@ -1,33 +1,33 @@
 export enum TagEnum {
-  OFFLINE = "Offline",
-  BACKEND = "Backend",
+  OFFLINE = "OFFLINE",
+  BACKEND = "BACKEND",
   UI = "UI",
-  TRAINING = "Training",
-  DOCUMENTATION = "Documentation",
-  RELEASE = "Release",
-  APP_STORE = "App Store",
-  INFRASTRUCTURE = "Infrastructure",
-  INTEGRATION = "Integration",
-  SOCIAL_MEDIA = "Social Media",
-  BACKUP = "Backup",
-  DATABASE = "Database",
-  FORM = "Form",
-  REPORTING = "Reporting",
-  DATA_ANALYSIS = "Data Analysis",
-  DESIGN = "Design",
-  SECURITY = "Security",
+  TRAINING = "TRAINING",
+  DOCUMENTATION = "DOCUMENTATION",
+  RELEASE = "RELEASE",
+  APP_STORE = "APP_STORE",
+  INFRASTRUCTURE = "INFRASTRUCTURE",
+  INTEGRATION = "INTEGRATION",
+  SOCIAL_MEDIA = "SOCIAL_MEDIA",
+  BACKUP = "BACKUP",
+  DATABASE = "DATABASE",
+  FORM = "FORM",
+  REPORTING = "REPORTING",
+  DATA_ANALYSIS = "DATA_ANALYSIS",
+  DESIGN = "DESIGN",
+  SECURITY = "SECURITY",
   QA = "QA",
-  LOCALIZATION = "Localization",
-  DEBUGGING = "Debugging",
-  MIGRATION = "Migration",
-  FEEDBACK = "Feedback",
-  CONTENT = "Content",
-  WEB = "Web",
-  OPTIMIZATION = "Optimization",
-  NOTIFICATION = "Notification",
-  BUG_FIX = "Bug Fix",
-  TESTING = "Testing",
-  COMMUNICATION = "Communication",
+  LOCALIZATION = "LOCALIZATION",
+  DEBUGGING = "DEBUGGING",
+  MIGRATION = "MIGRATION",
+  FEEDBACK = "FEEDBACK",
+  CONTENT = "CONTENT",
+  WEB = "WEB",
+  OPTIMIZATION = "OPTIMIZATION",
+  NOTIFICATION = "NOTIFICATION",
+  BUG_FIX = "BUG_FIX",
+  TESTING = "TESTING",
+  COMMUNICATION = "COMMUNICATION",
   SEO = "SEO",
 }
 
@@ -99,27 +99,27 @@ export function viewMapper(tag: TagEnum): string {
 }
 
 export enum SectionEnum {
-  todo = "TODO",
-  inprogress = "IN_PROGRESS",
-  postponed = "POSTPONED",
-  testing = "TESTING",
-  completed = "COMPLETED",
-  cancelled = "CANCELLED",
+  TODO = "TODO",
+  IN_PROGRESS = "IN_PROGRESS",
+  POSTPONED = "POSTPONED",
+  TESTING = "TESTING",
+  COMPLETED = "COMPLETED",
+  CANCELLED = "CANCELLED",
 }
 
 export function viewSectionEnum(section: string) {
   switch (section) {
-    case SectionEnum.completed:
+    case SectionEnum.COMPLETED:
       return "Tamamlandı";
-    case SectionEnum.inprogress:
+    case SectionEnum.IN_PROGRESS:
       return "Yapım Aşamasında";
-    case SectionEnum.testing:
+    case SectionEnum.TESTING:
       return "Test Aşamasında";
-    case SectionEnum.cancelled:
+    case SectionEnum.CANCELLED:
       return "İptal Edildi";
-    case SectionEnum.postponed:
+    case SectionEnum.POSTPONED:
       return "Gönderildi";
-    case SectionEnum.todo:
+    case SectionEnum.TODO:
       return "Yapılacak";
     default:
       return "Unknown";
@@ -127,18 +127,18 @@ export function viewSectionEnum(section: string) {
 }
 
 export enum PriorityEnum {
-  high = "High",
-  low = "Low",
-  medium = "Medium",
+  HIGH = "HIGH",
+  LOW = "LOW",
+  MEDIUM = "MEDIUM",
 }
 
 export function viewPriorityEnum(priority: string) {
   switch (priority) {
-    case PriorityEnum.high:
+    case PriorityEnum.HIGH:
       return "Yüksek";
-    case PriorityEnum.medium:
+    case PriorityEnum.MEDIUM:
       return "Orta";
-    case PriorityEnum.low:
+    case PriorityEnum.LOW:
       return "Düşük";
   }
 }
@@ -147,9 +147,7 @@ export interface SectionData {
   id: string;
   assigned_to: string[];
   description: string;
-  due_date: string;
   priority: string;
-  project_id: string;
   tags: TagEnum[];
   title: string;
   status: SectionEnum;

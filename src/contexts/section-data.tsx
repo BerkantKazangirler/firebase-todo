@@ -5,23 +5,17 @@ import { SectionDataI } from "@/types";
 type DataContextType = {
   sectionData: SectionDataI[];
   setSectionData: React.Dispatch<React.SetStateAction<SectionDataI[]>>;
-  loading: boolean;
-  setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const DataContext = createContext<DataContextType>({
   sectionData: [],
   setSectionData: () => {},
-
-  loading: false,
-  setLoading: () => {},
 });
 
 export const useSectionContext = () => useContext(DataContext);
 
 export const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [sectionData, setSectionData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadData = async () => {
@@ -30,9 +24,6 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
         setSectionData(sectionDataFetch);
       } catch (error) {
         console.log("hata" + error);
-        setLoading(true);
-      } finally {
-        setLoading(false);
       }
     };
 
@@ -44,8 +35,6 @@ export const DataProvider = ({ children }: { children: React.ReactNode }) => {
       value={{
         sectionData,
         setSectionData,
-        loading,
-        setLoading,
       }}
     >
       {children}
